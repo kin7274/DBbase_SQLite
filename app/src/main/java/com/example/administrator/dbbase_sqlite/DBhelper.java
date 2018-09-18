@@ -31,19 +31,19 @@ public class DBhelper extends SQLiteOpenHelper {
     public void insert(String item, int price) {
         // 읽고 쓰기가 가능하게 DB열기
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO BOOK VALUES(null, '" + item + "', " + price +")");
+        db.execSQL("INSERT INTO BOOK VALUES(null, '" + item + "', " + price + ")");
         db.close();
     }
 
     // 업데이트
-    public void update(String item, int price){
+    public void update(String item, int price) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("UPDATE BOOK SET price =" + price + "WHERE item'" + item + "';");
         db.close();
     }
 
     // 딜리트
-    public void delete(String item){
+    public void delete(String item) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM BOOK WHERE item='" + item + "';");
         db.close();
