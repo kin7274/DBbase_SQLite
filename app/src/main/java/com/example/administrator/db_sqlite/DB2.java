@@ -1,4 +1,4 @@
-package com.example.administrator.dbbase_sqlite;
+package com.example.administrator.db_sqlite;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,57 +6,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-public class MainActivity extends AppCompatActivity {
+public class DB2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_db2);
 
-        final DBHelper dbHelper = new DBHelper(getApplicationContext(), "MoneyBook.db", null, 1);
+        final DBHelper2 dbHelper = new DBHelper2(getApplicationContext(), "NEEDLE.db", null, 1);
 
         // 테이블에 있는 모든 데이터 출력
         final TextView result = (TextView) findViewById(R.id.result);
-
-        final EditText etDate = (EditText) findViewById(R.id.date);
         final EditText etItem = (EditText) findViewById(R.id.item);
-        final EditText etPrice = (EditText) findViewById(R.id.price);
-
-        // 날짜는 현재 날짜로 고정
-        // 현재 시간 구하기
-        long now = System.currentTimeMillis();
-        Date date = new Date(now);
-        // 출력될 포맷 설정
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
-        etDate.setText(simpleDateFormat.format(date));
 
         // DB에 데이터 추가
         Button insert = (Button) findViewById(R.id.insert);
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String date = etDate.getText().toString();
                 String item = etItem.getText().toString();
-                int price = Integer.parseInt(etPrice.getText().toString());
-
-                dbHelper.insert(date, item, price);
-                result.setText(dbHelper.getResult());
-            }
-        });
-
-        // DB에 있는 데이터 수정
-        Button update = (Button) findViewById(R.id.update);
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String item = etItem.getText().toString();
-                int price = Integer.parseInt(etPrice.getText().toString());
-
-                dbHelper.update(item, price);
+                Toast.makeText(getApplicationContext(), "" + item, Toast.LENGTH_SHORT).show();
+                dbHelper.insert(item);
                 result.setText(dbHelper.getResult());
             }
         });
@@ -67,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String item = etItem.getText().toString();
-
                 dbHelper.delete(item);
                 result.setText(dbHelper.getResult());
             }

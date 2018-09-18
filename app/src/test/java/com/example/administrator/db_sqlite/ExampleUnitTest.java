@@ -1,4 +1,4 @@
-package com.example.administrator.dbbase_sqlite;
+package com.example.administrator.db_sqlite;
 
 import org.junit.Test;
 
