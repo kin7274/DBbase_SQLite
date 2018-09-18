@@ -18,7 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // 온크리에이트
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE BOOK (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, price INTEGER)");
+        db.execSQL("CREATE TABLE BOOK (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, price INTEGER, create_at TEXT)");
 //        db.execSQL("CREATE TABLE NEEDLE(_id INTEGER PRIMARY KEY AUTOINCREMENT, item NAME)");
     }
 
@@ -28,10 +28,10 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // 인썰트
-    public void insert(String date, String item, int price) {
+    public void insert(String create_at, String item, int price) {
         // 읽고 쓰기가 가능하게 DB열기
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO BOOK VALUES(null, '" + item + "', " + price + ")");
+        db.execSQL("INSERT INTO BOOK VALUES(null, '" + item + "', " + price + ", '" + create_at + "')");
         db.close();
     }
 
