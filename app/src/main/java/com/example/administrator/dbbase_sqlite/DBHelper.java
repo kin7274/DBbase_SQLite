@@ -8,10 +8,10 @@ import android.database.sqlite.SQLiteTableLockedException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DBhelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
     // DBHelp 생성자로 관리할 DB의 이름과 버전 정보를 받는다
-    public DBhelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
@@ -28,7 +28,7 @@ public class DBhelper extends SQLiteOpenHelper {
     }
 
     // 인썰트
-    public void insert(String item, int price) {
+    public void insert(String date, String item, int price) {
         // 읽고 쓰기가 가능하게 DB열기
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("INSERT INTO BOOK VALUES(null, '" + item + "', " + price + ")");
