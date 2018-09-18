@@ -61,7 +61,9 @@ public class DBHelper extends SQLiteOpenHelper {
                     + cursor.getString(1)
                     + " | "
                     + cursor.getInt(2)
-                    + "원\n";
+                    + "원 "
+                    + cursor.getString(3)
+                    + "\n";
         }
         return result;
     }
