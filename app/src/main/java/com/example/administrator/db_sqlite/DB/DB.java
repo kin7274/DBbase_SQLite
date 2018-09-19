@@ -1,4 +1,4 @@
-package com.example.administrator.db_sqlite;
+package com.example.administrator.db_sqlite.DB;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.administrator.db_sqlite.DB.DBHelper;
+import com.example.administrator.db_sqlite.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

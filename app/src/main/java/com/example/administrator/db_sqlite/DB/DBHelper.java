@@ -1,4 +1,4 @@
-package com.example.administrator.db_sqlite;
+package com.example.administrator.db_sqlite.DB;
 
 import android.content.Context;
 import android.database.Cursor;

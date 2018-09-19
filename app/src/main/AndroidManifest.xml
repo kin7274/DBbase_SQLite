@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DB" />
-        <activity android:name=".DB2" />
+        <activity android:name=".DB.DB" />
+        <activity android:name=".DB2.DB2" />
     </application>
 </manifest>

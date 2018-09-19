@@ -1,4 +1,4 @@
-package com.example.administrator.db_sqlite;
+package com.example.administrator.db_sqlite.DB2;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.administrator.db_sqlite.R;
 
 public class DB2 extends AppCompatActivity {
 
@@ -17,11 +19,9 @@ public class DB2 extends AppCompatActivity {
 
         final DBHelper2 dbHelper = new DBHelper2(getApplicationContext(), "NEEDLE.db", null, 1);
 
-        // 테이블에 있는 모든 데이터 출력
         final TextView result = (TextView) findViewById(R.id.result);
         final EditText etItem = (EditText) findViewById(R.id.item);
 
-        // DB에 데이터 추가
         Button insert = (Button) findViewById(R.id.insert);
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +33,6 @@ public class DB2 extends AppCompatActivity {
             }
         });
 
-        // DB에 있는 데이터 삭제
         Button delete = (Button) findViewById(R.id.delete);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +43,6 @@ public class DB2 extends AppCompatActivity {
             }
         });
 
-        // DB에 있는 데이터 조회
         Button select = (Button) findViewById(R.id.select);
         select.setOnClickListener(new View.OnClickListener() {
             @Override

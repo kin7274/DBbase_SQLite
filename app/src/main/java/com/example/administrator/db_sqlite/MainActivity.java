@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.administrator.db_sqlite.DB.DB;
+import com.example.administrator.db_sqlite.DB2.DB2;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn1, btn2;
     @Override
